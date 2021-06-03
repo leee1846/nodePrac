@@ -1,7 +1,8 @@
 const express = require("express");
+const morgan = require("morgan");
 const app = express();
-const logger = require("./logger");
-app.use(logger);
+
+app.use(morgan("tiny"));
 
 app.get("/", (req, res) => {
   res.send("home");
